@@ -10,7 +10,7 @@ Selamat datang di repositori saya! Di sini, Anda akan menemukan rekap belajar sa
 - 🔗 Pertemuan 5 - Training Models (1)
 - 📚 Pertemuan 6 - Training Models (2)
 - 🔀 Pertemuan 7 - Review Materi 1-6
-- 🌳 Pertemuan 8 -
+- 🌳 Pertemuan 8 - Support Vector Machine (SVM)
 - 🔍 Pertemuan 9 - 
 - 🔢 Pertemuan 10 - 
 - 🌳 Pertemuan 11 - 
