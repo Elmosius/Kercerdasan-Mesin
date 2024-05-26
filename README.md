@@ -12,9 +12,7 @@ Selamat datang di repositori saya! Di sini, Anda akan menemukan rekap belajar sa
 - Pertemuan 7 - Review Materi 1-6
 - Pertemuan 8 - Support Vector Machine (SVM)
 - Pertemuan 9 - Decision Tree
-- Pertemuan 10 - 
-- Pertemuan 11 - 
-- Pertemuan 12 - 
+- ❓Coming Soon
 
 ## 📖 Referensi
 - [Buku Geron ](https://drive.google.com/file/d/1wopIXnjogxeXZi4mPzNIYcICgeeuYDXJ/view)
