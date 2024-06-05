@@ -13,6 +13,7 @@ Selamat datang di repositori saya! Di sini, Anda akan menemukan rekap belajar sa
 - Pertemuan 8 - Support Vector Machine (SVM)
 - Pertemuan 9 - Decision Tree
 - Pertemuan 10 - Ensemble Model (Random Forest)
+- Pertemuan 11 - Principle Component Analysis
 - ❓Coming Soon
 
 ## 📖 Referensi
