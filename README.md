@@ -15,7 +15,27 @@ Selamat datang di repositori saya! Di sini, Anda akan menemukan rekap belajar sa
 - Pertemuan 10 - Ensemble Model (Random Forest)
 - Pertemuan 11 - Principle Component Analysis
 - ❓Coming Soon
+- 🔥Project Besar
 
+  > Membuat Model untuk memprediksi harga rumah di daerah Jakarta
+
+    Intinya saya dan teman sekelompok melakukan pencarian terlebih dahulu dari sumber-sumber yang relevan dan berkualitas, termasuk situs rumah123.com. Kami mengumpulkan data rumah di Jakarta, memproses data tersebut agar sesuai     untuk model regresi, mengubah atribut nominal menjadi numerik, dan mengurangi dimensi data menggunakan PCA (Principal Component Analysis) untuk visualisasi.
+
+    Kemudian, kami mengembangkan model dasar menggunakan beberapa algoritma regresi seperti regresi linear, support vector regression, dan decision tree regression. Setiap model dievaluasi menggunakan Mean Absolute Error (MAE)       untuk menentukan model terbaik. Setelah itu, kami melakukan tuning hyperparameter pada model terbaik untuk meningkatkan akurasi prediksi.
+
+    Proyek ini juga mencakup pengembangan aplikasi web sederhana menggunakan Flask, di mana model prediksi harga rumah diintegrasikan ke dalam aplikasi tersebut. Kami juga membuat laporan penelitian dan video presentasi yang         menjelaskan setiap langkah yang telah dilakukan serta hasil yang diperoleh.
+
+  > ## ⚙️ Teknologi yang dipakai
+    - Flask
+    - Jinja2
+    - Django
+  
+  > ## 💻 Demo
+    - Coming Soon
+  
+  > ## ⚠️ Instalasi
+    - Coming Soon
+    
 ## 📖 Referensi
 - [Buku Geron ](https://drive.google.com/file/d/1wopIXnjogxeXZi4mPzNIYcICgeeuYDXJ/view)
 - https://github.com/jeffprosise/Applied-Machine-Learning
