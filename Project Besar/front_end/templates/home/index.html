@@ -75,7 +75,7 @@
     </div>
   </div>
   <div class="mt-4 text-center">
-    <button type="submit" class="btn btn-lg btn-bd-primary px-3 fs-5">Prediksi</button>
+    <button type="submit" class="btn btn-lg btn-bd-primary px-4 fs-6">Prediksi</button>
     <div id="loading" class="spinner-border text-primary" role="status" style="display: none">
       <span class="visually-hidden">Loading...</span>
     </div>
@@ -94,11 +94,20 @@
     text.textContent = "";
 
     let i = 0;
+    let isDeleting = false;
+
     function typeWriter() {
-      if (i < textContent.length) {
+      if (!isDeleting && i < textContent.length) {
         text.innerHTML += textContent.charAt(i);
         i++;
         setTimeout(typeWriter, 100);
+      } else if (isDeleting && i > 0) {
+        text.innerHTML = textContent.substring(0, i - 1);
+        i--;
+        setTimeout(typeWriter, 50);
+      } else {
+        isDeleting = !isDeleting;
+        setTimeout(typeWriter, 1000);
       }
     }
     typeWriter();
