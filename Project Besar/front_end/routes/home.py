@@ -10,7 +10,7 @@ def index():
 @home.route('/predict', methods=['POST'])
 def predict():
     data = request.form.to_dict()
-    response = requests.post('http://localhost:5000/predict', json=data)
+    response = requests.post('http://localhost:5000/predict', data=data)
     prediction = response.json().get('prediction')
 
     return render_template('home/hasil.html', prediction=prediction)

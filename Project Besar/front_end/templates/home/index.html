@@ -1,11 +1,11 @@
 {% extends "starter.html" %} {% block content %}
 
 <h1 class="mb-4 animate-text2">Prediksi Rumah Sekitaran Jakarta</h1>
-<form action="/predict" method="post" class="text-start">
+<form id="predict-form" action="/predict" method="post" class="text-start">
   <div class="row">
     <div class="col-md-6 mb-3">
       <label for="kota" class="pb-2">Pilih Kota</label>
-      <select id="kota" name="kota" class="form-select form-select-sm" required>
+      <select id="kota" name="kota" class="form-select form-select-sm" required autofocus>
         <option value="" disabled selected>Pilih kota Jakarta</option>
         <option value="Jakarta Pusat">Jakarta Pusat</option>
         <option value="Jakarta Barat">Jakarta Barat</option>
@@ -61,28 +61,35 @@
     </div>
     <div class="col-md-6 mb-3">
       <label for="jarak_rs" class="pb-2">Jarak dengan Rumah Sakit (km)</label>
-      <input type="number" id="jarak_rs" name="jarak_rs" class="form-control form-control-sm" step="0.1" min="0" required />
+      <input type="number" id="jarak_rs" name="jarak_rs" class="form-control form-control-sm" step="any" min="0" required />
     </div>
   </div>
   <div class="row">
     <div class="col-md-6 mb-3">
       <label for="jarak_sekolah" class="pb-2">Jarak dengan Sekolah (km)</label>
-      <input type="number" id="jarak_sekolah" name="jarak_sekolah" class="form-control form-control-sm" step="0.1" min="0" required />
+      <input type="number" id="jarak_sekolah" name="jarak_sekolah" class="form-control form-control-sm" step="any" min="0" required />
     </div>
     <div class="col-md-6 mb-3">
       <label for="jarak_tol" class="pb-2">Jarak dengan Tol (km)</label>
-      <input type="number" id="jarak_tol" name="jarak_tol" class="form-control form-control-sm" step="0.1" min="0" required />
+      <input type="number" id="jarak_tol" name="jarak_tol" class="form-control form-control-sm" step="any" min="0" required />
     </div>
   </div>
   <div class="mt-4 text-center">
     <button type="submit" class="btn btn-lg btn-bd-primary px-3 fs-5">Prediksi</button>
+    <div id="loading" class="spinner-border text-primary" role="status" style="display: none">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   </div>
 </form>
-
 {% endblock %} {% block js %}
 <script>
+  document.getElementById("predict-form").addEventListener("submit", function () {
+    document.querySelector('button[type="submit"]').style.display = "none";
+    document.getElementById("loading").style.display = "inline-block";
+  });
+
   document.addEventListener("DOMContentLoaded", function () {
-    const text = document.querySelector(".animate-text");
+    const text = document.querySelector(".animate-text2");
     const textContent = text.textContent;
     text.textContent = "";
 

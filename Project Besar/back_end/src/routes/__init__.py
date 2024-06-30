@@ -1,5 +1,5 @@
 from flask import Flask
-from controllers.predict_controller import predict_bp
+from src.controllers.predict_controller import predict_bp
 
 def create_app():
     app = Flask(__name__)

@@ -3,7 +3,7 @@
 <h1 class="mb-4">Hasil Prediksi</h1>
 <div class="mt-5">
   <h2>Estimasi Harga Rumah:</h2>
-  <div class="alert alert-info" role="alert">{{ prediction }}</div>
+  <div class="alert alert-info" role="alert">{% if prediction != "Prediksi gagal atau input tidak valid" %} Rp {{ "{:,.0f}".format(prediction) | replace(',', '.') }} {% else %} {{ prediction }} {% endif %}</div>
   <a href="/" class="btn btn-lg btn-bd-primary mt-4">Kembali ke Form</a>
 </div>
 
