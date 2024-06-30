@@ -1,0 +1,100 @@
+{% extends "starter.html" %} {% block content %}
+
+<h1 class="mb-4 animate-text2">Prediksi Rumah Sekitaran Jakarta</h1>
+<form action="/predict" method="post" class="text-start">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="kota" class="pb-2">Pilih Kota</label>
+      <select id="kota" name="kota" class="form-select form-select-sm" required>
+        <option value="" disabled selected>Pilih kota Jakarta</option>
+        <option value="Jakarta Pusat">Jakarta Pusat</option>
+        <option value="Jakarta Barat">Jakarta Barat</option>
+        <option value="Jakarta Selatan">Jakarta Selatan</option>
+        <option value="Jakarta Timur">Jakarta Timur</option>
+      </select>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="kamar_tidur" class="pb-2">Jumlah Kamar Tidur</label>
+      <input type="number" id="kamar_tidur" name="kamar_tidur" class="form-control form-control-sm" min="1" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="kamar_mandi" class="pb-2">Jumlah Kamar Mandi</label>
+      <input type="number" id="kamar_mandi" name="kamar_mandi" class="form-control form-control-sm" min="1" required />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="luas_tanah" class="pb-2">Luas Tanah (m²)</label>
+      <input type="number" id="luas_tanah" name="luas_tanah" class="form-control form-control-sm" min="1" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="luas_bangunan" class="pb-2">Luas Bangunan (m²)</label>
+      <input type="number" id="luas_bangunan" name="luas_bangunan" class="form-control form-control-sm" min="1" required />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="carport" class="pb-2">Carport (mobil)</label>
+      <input type="number" id="carport" name="carport" class="form-control form-control-sm" min="0" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="listrik" class="pb-2">Pasokan Listrik (watt)</label>
+      <input type="number" id="listrik" name="listrik" class="form-control form-control-sm" min="100" step="100" required />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="keamanan" class="pb-2">Keamanan</label>
+      <select id="keamanan" name="keamanan" class="form-select form-select-sm" required>
+        <option value="ada">Ada</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="taman" class="pb-2">Taman</label>
+      <select id="taman" name="taman" class="form-select form-select-sm" required>
+        <option value="ada">Ada</option>
+        <option value="tidak">Tidak</option>
+      </select>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="jarak_rs" class="pb-2">Jarak dengan Rumah Sakit (km)</label>
+      <input type="number" id="jarak_rs" name="jarak_rs" class="form-control form-control-sm" step="0.1" min="0" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="jarak_sekolah" class="pb-2">Jarak dengan Sekolah (km)</label>
+      <input type="number" id="jarak_sekolah" name="jarak_sekolah" class="form-control form-control-sm" step="0.1" min="0" required />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="jarak_tol" class="pb-2">Jarak dengan Tol (km)</label>
+      <input type="number" id="jarak_tol" name="jarak_tol" class="form-control form-control-sm" step="0.1" min="0" required />
+    </div>
+  </div>
+  <div class="mt-4 text-center">
+    <button type="submit" class="btn btn-lg btn-bd-primary px-3 fs-5">Prediksi</button>
+  </div>
+</form>
+
+{% endblock %} {% block js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const text = document.querySelector(".animate-text");
+    const textContent = text.textContent;
+    text.textContent = "";
+
+    let i = 0;
+    function typeWriter() {
+      if (i < textContent.length) {
+        text.innerHTML += textContent.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    typeWriter();
+  });
+</script>
+{% endblock %}
