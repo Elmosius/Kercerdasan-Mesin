@@ -26,7 +26,9 @@ Selamat datang di repositori saya! Di sini, Anda akan menemukan rekap belajar sa
     Proyek ini juga mencakup pengembangan aplikasi web sederhana menggunakan Flask, di mana model prediksi harga rumah diintegrasikan ke dalam aplikasi tersebut. Kami juga membuat laporan penelitian dan video presentasi yang         menjelaskan setiap langkah yang telah dilakukan serta hasil yang diperoleh.
 
   > ## ⚙️ Teknologi yang dipakai
-    - ❔
+    - Pickle
+    - Flask
+    - Jinja2 Templating
   
   > ## 💻 Demo
     - Coming Soon
