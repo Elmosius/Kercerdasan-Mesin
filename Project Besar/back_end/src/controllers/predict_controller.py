@@ -21,7 +21,7 @@ def predict_route():
             'jarak dengan tol terdekat (km)': float(request.form.get('jarak_tol', 0.0))
         }
 
-        # print("Data yang diterima:", data)
+        print("Data yang diterima:", data)
         prediction = predict(data)
         return jsonify({'prediction': prediction})
 

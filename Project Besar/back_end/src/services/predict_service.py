@@ -20,13 +20,36 @@ def preprocess_data(data, scaler, pca):
     # Map categorical values to numerical
     input_df['keamanan (ada/tidak)'] = input_df['keamanan (ada/tidak)'].map({'ada': 1, 'tidak': 0})
     input_df['taman (ada/tidak)'] = input_df['taman (ada/tidak)'].map({'ada': 1, 'tidak': 0})
-    input_df['lokasi'] = input_df['Kabupaten/Kota'].map({'Jakarta Pusat': 0, 'Jakarta Barat': 1, 'Jakarta Selatan': 2, 'Jakarta Timur': 3})  # Tambahkan semua kemungkinan lokasi
+    input_df['lokasi'] = input_df['Kabupaten/Kota'].map({
+        'Jakarta Pusat': 'Jakarta Pusat', 
+        'Jakarta Barat': 'Jakarta Barat', 
+        'Jakarta Selatan': 'Jakarta Selatan', 
+        'Jakarta Timur': 'Jakarta Timur'
+    })  # Tambahkan semua kemungkinan lokasi
+
+    # Drop the original Kabupaten/Kota column
     input_df = input_df.drop(columns=['Kabupaten/Kota'])
 
+    # Ensure 'lokasi' column is filled correctly before get_dummies
+    if 'lokasi' not in input_df.columns:
+        raise ValueError("Kolom 'lokasi' tidak ada dalam DataFrame setelah mapping.")
+
+    # Encoding categorical features
+    input_df = pd.get_dummies(input_df, columns=['keamanan (ada/tidak)', 'taman (ada/tidak)', 'lokasi'], drop_first=True)
+
+    # Ensure all necessary features are present
+    expected_features = scaler.feature_names_in_
+    for feature in expected_features:
+        if feature not in input_df.columns:
+            input_df[feature] = 0
+
+    # Scaling and PCA transformation
     input_scaled = scaler.transform(input_df)
     input_reduced = pca.transform(input_scaled)
 
     return input_reduced
+
+
 
 def predict(data):
     model, scaler, pca = load_model()
