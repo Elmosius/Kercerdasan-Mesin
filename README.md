@@ -14,7 +14,6 @@ Selamat datang di repositori saya! Di sini, Anda akan menemukan rekap belajar sa
 - Pertemuan 9 - Decision Tree
 - Pertemuan 10 - Ensemble Model (Random Forest)
 - Pertemuan 11 - Principle Component Analysis
-- ❓Coming Soon
 - 🔥Project Besar
 
   > Membuat Model untuk memprediksi harga rumah di daerah Jakarta
