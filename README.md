@@ -31,9 +31,6 @@ Selamat datang di repositori saya! Di sini, Anda akan menemukan rekap belajar sa
   
   > ## 💻 Demo
     - Coming Soon
-  
-  > ## ⚠️ Instalasi
-    - Coming Soon
     
 ## 📖 Referensi
 - [Buku Geron ](https://drive.google.com/file/d/1wopIXnjogxeXZi4mPzNIYcICgeeuYDXJ/view)
